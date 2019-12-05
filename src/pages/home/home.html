@@ -3,13 +3,18 @@
     <ion-title>
       Contactos
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="clickAdd()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding style= background-color:#3E2F5B>
-  <ion-item *ngFor="let contacto of contactos" style="background-color: orange;">
+  <ion-item *ngFor="let contacto of contactos" style="background-color: orange; margin-bottom: 5px;">
       <ion-avatar item-start >
-        <img src="https://api.adorable.io/avatars/285/abott@adorable.png">
+        <img [src]="contacto.avatar">
       </ion-avatar>
       <h2>{{contacto.nombre}}</h2>
       <p>{{contacto.telefono}}</p>
